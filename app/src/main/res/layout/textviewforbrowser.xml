@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/projectNames"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_border"
+    android:padding="8dp"
+    android:text="Üres szöveg"
+    android:textColor="#FFFFFF"
+    android:textSize="25sp"
+    android:gravity="center_horizontal"
+    app:barrierMargin="@dimen/material_emphasis_disabled_background"
+
+    />

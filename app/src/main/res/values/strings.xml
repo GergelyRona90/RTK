@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">KARESZ</string>
+    <string name="btnBrowserText">Tallózás meglévő projektek között</string>
+    <string name="btnNewProjecTextt">Új projekt készítése</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

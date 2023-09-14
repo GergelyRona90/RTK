@@ -1,0 +1,336 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:autoMirrored="true"
+    android:viewportWidth="1000"
+    android:viewportHeight="1000">
+
+<!--
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M315,200 l360,0 l0,600,l-360,0" />
+-->
+    <!--Fejegység-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M435,460
+        l120,0
+        l0,-160
+        l-120,0
+        " />
+
+    <!--körívek-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M435,300
+        a1,1,0,1,1,45,0
+        M510,300
+        a1,1,0,1,1,45,0
+        M480,458
+        a1,1,0,1,1,-45,0
+        M555,458
+        a1,1,0,1,1,-45,0
+        " />
+    <!--Segéd téglalapok-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M452,480
+        l80,0
+        l0,-20
+        l-80,0
+        M435,300
+        l100,0
+        l0,-23
+        l-80,0
+        " />
+    <path
+        android:fillColor="@color/black"
+        android:pathData="
+    M428,458
+    l4,4
+    l126,0
+    l4,-4
+    l0,-162
+    l-4,-4
+    l-126,0
+    l-4,4
+" />
+    <!-- Műszer lencséjének körei-->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="
+        M495,430
+        a50,50 0 1,1 1,0
+" />
+    <path
+        android:fillColor="@color/black"
+        android:pathData="
+        M495,425
+        a45,45 0 1,1 1,0
+" />
+    <path
+        android:fillColor="@color/white"
+        android:pathData="
+        M495,400
+        a20,20 0 1,1 1,0
+" />
+    <!--Szélső téglalpok-->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="
+        M320,490
+        l75,0
+        l0,-160
+        l-75,0
+        l-5,5
+        l0,150
+"
+        />
+    <path
+        android:fillColor="@color/black"
+        android:pathData="
+        M670,490
+        l5,-5
+        l0,-150
+        l-5,-5
+        l-75,0
+        l0,160
+"
+        />
+    <path
+        android:fillColor="@color/black"
+        android:pathData="
+        M630,350
+        l0,-140
+        l-25,0
+        l0,140
+"
+        />
+    <path
+        android:fillColor="@color/black"
+        android:pathData="
+        M360,350
+        l0,-140
+        l25,0
+        l0,140
+"
+        />
+    <!--Felső rész-->
+    <!--körívek-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M600,200
+        a1,1,0,1,1,25,25
+        " />
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M365,225
+        a1,1,0,1,1,25,-25
+        " />
+
+
+    <!--téglalap-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M370,195
+        l240,0
+        l0,20
+        l-240,0
+        " />
+    <!-- KÖZÉPSŐ RÉSZ-->
+
+
+    <!-- NAGY DOBOZ-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M320,500
+        l350,0
+        l5,5
+        l0,175
+        l-5,5
+        l-350,0
+        l-5,-5
+        l0,-175
+        " />
+    <!--Kijelző-->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M340,520
+        l145,0
+        l5,5
+        l0,90
+        l-5,5
+        l-145,0
+        l-5,-5
+        l0,-90
+        " />
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M365,525
+        l20,0
+        l30,90
+        l-20,0
+        M415,525
+        l20,0
+        l30,90
+        l-20,0
+
+" />
+    <!--Kis gombok-->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M345,640
+        l15,0
+        l2.5,2.5
+        l0,10
+        l-2.5,2.5
+        l-15,0
+        l-2.5,-2.5
+        l0,-10
+        " />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M375,640
+        l15,0
+        l2.5,2.5
+        l0,10
+        l-2.5,2.5
+        l-15,0
+        l-2.5,-2.5
+        l0,-10
+        " />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M405,640
+        l15,0
+        l2.5,2.5
+        l0,10
+        l-2.5,2.5
+        l-15,0
+        l-2.5,-2.5
+        l0,-10
+        " />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M435,640
+        l15,0
+        l2.5,2.5
+        l0,10
+        l-2.5,2.5
+        l-15,0
+        l-2.5,-2.5
+        l0,-10
+        " />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M465,640
+        l15,0
+        l2.5,2.5
+        l0,10
+        l-2.5,2.5
+        l-15,0
+        l-2.5,-2.5
+        l0,-10
+        " />
+    <!--ELLPISZISEK-->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="
+        M550,535
+        a10,5 0 1,1 1,0
+        M580,535
+        a10,5 0 1,1 1,0
+        M610,535
+        a10,5 0 1,1 1,0
+        M550,555
+        a10,5 0 1,1 1,0
+        M580,555
+        a10,5 0 1,1 1,0
+        M610,555
+        a10,5 0 1,1 1,0
+        M550,575
+        a10,5 0 1,1 1,0
+        M580,575
+        a10,5 0 1,1 1,0
+        M610,575
+        a10,5 0 1,1 1,0
+        M550,595
+        a10,5 0 1,1 1,0
+        M580,595
+        a10,5 0 1,1 1,0
+        M610,595
+        a10,5 0 1,1 1,0
+        M550,615
+        a10,5 0 1,1 1,0
+        M580,615
+        a10,5 0 1,1 1,0
+        M610,615
+        a10,5 0 1,1 1,0
+        " />
+    <!-- OLDALSÓ GOMB-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M680,570
+        l30,0
+        l0,10
+        l30,0
+        l0,50
+        l-30,0
+        l0,10
+        l-30,0
+        " />
+    <!-- ALSÓ RÉSZ-->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="
+        M315,775
+        l0,-55
+        l5,-5
+        l65,0
+        l0,-10
+        l-10,0
+        l0,-10
+        l240,0
+        l0,10
+        l-10,0
+        l0,10
+        l65,0
+        l5,5
+        l0,55
+        l-5,5
+        l-30,0
+        l0,5
+        l5,0
+        l0,15
+        l-40,0
+        l0-15
+        l5,0
+        l0,-5
+        l-220,0
+        l0,5
+        l5,0
+        l0,15
+        l-40,0
+        l0-15
+        l5,0
+        l0,-5
+        l-40,0
+        " />
+
+
+</vector>

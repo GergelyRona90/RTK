@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.karesz.Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_projectBrowser"
+            app:destination="@id/projectBrowser" />
+        <action
+            android:id="@+id/action_home_to_newProject"
+            app:destination="@id/newProject" />
+        <action
+            android:id="@+id/action_home_to_getLocation2"
+            app:destination="@id/getLocation2" />
+    </fragment>
+    <fragment
+        android:id="@+id/newProject"
+        android:name="com.example.karesz.NewProject"
+        android:label="Új Projekt"
+        tools:layout="@layout/fragment_new_project">
+        <action
+            android:id="@+id/action_newProject_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_newProject_to_projectBrowser"
+            app:destination="@id/projectBrowser" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectBrowser"
+        android:name="com.example.karesz.ProjectBrowser"
+        android:label="Projektek"
+        tools:layout="@layout/fragment_project_browser">
+        <action
+            android:id="@+id/action_projectBrowser_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_projectBrowser_to_project"
+            app:destination="@id/project" />
+    </fragment>
+    <fragment
+        android:id="@+id/project"
+        android:name="com.example.karesz.Project"
+        tools:layout="@layout/fragment_project" >
+        <action
+            android:id="@+id/action_project_to_projectBrowser"
+            app:destination="@id/projectBrowser" />
+        <argument
+            android:name="projectName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_projectFolder_to_cameraReview"
+            app:destination="@id/cameraReview" />
+        <action
+            android:id="@+id/action_project_to_RTKImage3"
+            app:destination="@id/RTKImage3" />
+        <action
+            android:id="@+id/action_project_to_displayRTKImagesInMap"
+            app:destination="@id/displayRTKImagesInMap" />
+        <action
+            android:id="@+id/action_project_to_OSMMap"
+            app:destination="@id/OSMMap" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraReview"
+        android:name="com.example.karesz.CameraReview"
+        android:label="Kamera"
+        tools:layout="@layout/fragment_camera_review">
+        <action
+            android:id="@+id/action_cameraReview_to_projectFolder"
+            app:destination="@id/project" />
+        <argument
+            android:name="projectName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/RTKImage3"
+        android:name="com.example.karesz.RTKImage3"
+        android:label="fragment_rtk_image3"
+        tools:layout="@layout/fragment_rtk_image3" >
+        <argument
+            android:name="projectName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_RTKImage3_to_project"
+            app:destination="@id/project" />
+        <argument
+            android:name="pos"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/getLocation2"
+        android:name="com.example.karesz.GetLocation2"
+        android:label="fragment_get_location2"
+        tools:layout="@layout/fragment_get_location2" >
+        <action
+            android:id="@+id/action_getLocation2_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayRTKImagesInMap"
+        android:name="com.example.karesz.DisplayRTKImagesInMap"
+        android:label="fragment_display_rtk_images_in_map"
+        tools:layout="@layout/fragment_display_rtk_images_in_map" >
+        <action
+            android:id="@+id/action_displayRTKImagesInMap_to_project"
+            app:destination="@id/project" />
+        <argument
+            android:name="projectName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/OSMMap"
+        android:name="com.example.karesz.OSMMap"
+        android:label="fragment_osm_map"
+        tools:layout="@layout/fragment_osm_map" >
+        <action
+            android:id="@+id/action_OSMMap_to_project"
+            app:destination="@id/project" />
+        <argument
+            android:name="projectName"
+            app:argType="string" />
+    </fragment>
+</navigation>
