@@ -25,6 +25,8 @@ import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.Paths
 
 @SuppressLint("StaticFieldLeak")
 private lateinit var navController: NavController
@@ -40,6 +42,8 @@ val downloadDirectory: File =
     Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
 
 val rtkFolder = File(downloadDirectory, "RTK")
+val deletedImageFolder = File(downloadDirectory, "DeletedImages")
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         checkFolderIsExist(rtkFolder)
+        checkFolderIsExist(deletedImageFolder)
 
         val osmView = layoutInflater.inflate(R.layout.fragment_osm_map, null)
         osmMap = osmView.findViewById(R.id.osmmap)
@@ -138,10 +143,12 @@ class MainActivity : AppCompatActivity() {
 
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun checkFolderIsExist(f: File) {
-    // mapp létezik-e, ha nem akkor létrehozzuk
+    // mappa létezik-e, ha nem akkor létrehozzuk
     if (!f.exists()) {
-        f.mkdir()
+        //f.mkdir()
+        Files.createDirectory(Paths.get(f.absolutePath))
     }
 
 }

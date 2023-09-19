@@ -17,6 +17,9 @@ import com.example.karesz.data.Datasource
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
 
 class Project : Fragment() {
     private val args: ProjectArgs by navArgs()
@@ -112,9 +115,10 @@ class Project : Fragment() {
 
                 val deletedImageFolder = File(downloadDirectory, "DeletedImages")
 
-                checkFolderIsExist(deletedImageFolder)
+            //    checkFolderIsExist(deletedImageFolder)
 
-                swipeImage.copyTo(deletedImageFolder, false)
+             //   swipeImage.copyTo(deletedImageFolder,true)
+                copyFileToFolder(swipeImage,deletedImageFolder)
 
                 swipeImage.delete()
                 listOfImages.removeAt(position)
@@ -213,7 +217,12 @@ class Project : Fragment() {
 
         }).attachToRecyclerView(recyclerViewForImages)
     }
+fun copyFileToFolder(sourceFile: File, destinationFolder: File) {
+        val sourcePath: Path = Paths.get(sourceFile.absolutePath)
+        val destinationPath: Path = Paths.get(destinationFolder.absolutePath, sourceFile.name)
 
-
+        Files.copy(sourcePath, destinationPath)
+    }
 }
+
 

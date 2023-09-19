@@ -3,11 +3,11 @@ package com.example.karesz
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +15,9 @@ import com.example.karesz.adapters.ProjectBrowserAdapter
 import com.example.karesz.data.Datasource
 import com.google.android.material.snackbar.Snackbar
 import java.io.File
+import java.io.IOException
+import java.nio.file.FileSystems
+
 
 class ProjectBrowser : Fragment() {
 
@@ -64,16 +67,33 @@ class ProjectBrowser : Fragment() {
                 val position = viewHolder.bindingAdapterPosition
 
                 val archiveFolder = File(downloadDirectory, "RTK_Archive_Folder")
-
                 checkFolderIsExist(archiveFolder)
+            /*
                 swipeProject.copyRecursively(archiveFolder, true)
                 swipeProject.deleteRecursively()
+             */
+                val projectArchiveFolder = File(archiveFolder,swipedProjectName)
+                checkFolderIsExist(projectArchiveFolder)
+                val from = FileSystems.getDefault().getPath(swipeProject.absolutePath)
+                val to = FileSystems.getDefault().getPath(archiveFolder.absolutePath)
+
+                try {
+                    if (swipeProject.copyRecursively(projectArchiveFolder,true)) {
+                        Snackbar.make(myRecyclerView,"$swipedProjectName archiválva.",Snackbar.LENGTH_LONG).show()
+                    } else {
+                        Snackbar.make(myRecyclerView,"$swipedProjectName nem sikerült archiválni.",Snackbar.LENGTH_LONG).show()
+                    }
+                } catch (e: Exception) {
+                    println("Exception occurred while copying.")
+                }
+                swipeProject.deleteRecursively()
+
                 projectFolders.removeAt(position)
                 adapter.notifyItemRemoved(position)
                 adapter.notifyItemRangeChanged(position, projectFolders.size - position)
 
-                Snackbar.make(myRecyclerView, swipedProjectName, Snackbar.LENGTH_LONG)
-                    .show()
+        //        Snackbar.make(myRecyclerView, swipedProjectName, Snackbar.LENGTH_LONG)
+        //            .show()
                 adapter.datas = projectFolders
                 //     }
             }
@@ -160,7 +180,25 @@ class ProjectBrowser : Fragment() {
         }).attachToRecyclerView(myRecyclerView)
     }
 
+    fun moveFolder(from: File, to: File) {
+        if (!from.exists() || !from.isDirectory) {
+            // A forrásmappa nem létezik vagy nem mappa
+            return
+        }
 
+        if (!to.exists() || !to.isDirectory) {
+            // A célmappa nem létezik vagy nem mappa
+            return
+        }
+
+        try {
+            from.copyRecursively(to, true)
+            from.deleteRecursively()
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            // Hiba történt az áthelyezés közben
+        }
+    }
 }
 
 
